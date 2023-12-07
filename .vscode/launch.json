@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "run (debug)",
+            "type": "lldb",
+            "request": "launch",
+            "preLaunchTask": "clang_debug",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "console": "externalTerminal",
+            "program": "${workspaceFolder}/out/${workspaceFolderBasename}.exe",
+        },
+        {
+            "name": "run (release)",
+            "type": "lldb",
+            "request": "launch",
+            "preLaunchTask": "clang_release",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "console": "externalTerminal",
+            "program": "${workspaceFolder}/out/${workspaceFolderBasename}.exe",
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "clang_debug",
+            "group": "build",
+            "type": "shell",
+            "command": "clang",
+            "args": [
+                "${workspaceFolder}/src/*.c",
+
+                "-Xlinker", "/NODEFAULTLIB:libcmt",
+                
+                "-L${workspaceFolder}/lib/",
+                "-lraylib",
+                "-lwinmm",
+                "-lgdi32",
+                "-luser32",
+                "-lkernel32",
+                "-lopengl32",
+                "-lshell32",
+                
+                "-Wall",
+                "-DDEBUG",
+                "-o${workspaceFolder}/out/${workspaceFolderBasename}.exe"
+            ]
+        }
+    ]
+}
