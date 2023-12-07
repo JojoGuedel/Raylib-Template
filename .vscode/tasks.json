@@ -24,6 +24,29 @@
                 "-DDEBUG",
                 "-o${workspaceFolder}/out/${workspaceFolderBasename}.exe"
             ]
-        }
+        },
+        {
+            "label": "clang_release",
+            "group": "build",
+            "type": "shell",
+            "command": "clang",
+            "args": [
+                "${workspaceFolder}/src/*.c",
+
+                "-Xlinker", "/NODEFAULTLIB:libcmt",
+                
+                "-L${workspaceFolder}/lib/",
+                "-lraylib",
+                "-lwinmm",
+                "-lgdi32",
+                "-luser32",
+                "-lkernel32",
+                "-lopengl32",
+                "-lshell32",
+                
+                "-Wall",
+                "-o${workspaceFolder}/out/${workspaceFolderBasename}.exe"
+            ]
+        },
     ]
 }
